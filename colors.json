@@ -1,0 +1,47 @@
+[
+    {
+        "background": "none",
+        "verlo": "#e0f0ff",
+        ".co": "#00ff00"
+    },
+    {
+        "background": "none",
+        "verlo": "#e3e8ff",
+        ".co": "#33ff33"
+    },
+    {
+        "background": "none",
+        "verlo": "#e6e0f8",
+        ".co": "#66ff66"
+    },
+    {
+        "background": "none",
+        "verlo": "#e9d8f2",
+        ".co": "#99ff99"
+    },
+    {
+        "background": "none",
+        "verlo": "#ececf0",
+        ".co": "#ccffcc"
+    },
+    {
+        "background": "none",
+        "verlo": "#efefef",
+        ".co": "#99ff99"
+    },
+    {
+        "background": "none",
+        "verlo": "#f2e0d8",
+        ".co": "#66ff66"
+    },
+    {
+        "background": "none",
+        "verlo": "#f5d8c8",
+        ".co": "#33ff33"
+    },
+    {
+        "background": "none",
+        "verlo": "#f8f0e0",
+        ".co": "#00ff00"
+    }
+]

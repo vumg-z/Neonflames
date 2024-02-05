@@ -74,8 +74,8 @@ timer.ontick = function(td){
     }
 
     // Automatically add particles if the total count is below a certain number, for example, 100
-    if (particles.length < 1000) {
-        for (var i = 0; i < 1000; i++) {
+    if (particles.length < 250) {
+        for (var i = 0; i < 250; i++) {
             particles.push({
                 vx: fuzzy(10.0),
                 vy: fuzzy(10.0),
