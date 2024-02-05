@@ -1,9 +1,9 @@
 var particles = [],
-    color = 'rgb(12, 2, 2)',
+    color = 'rgb(0, 25, 0)',
     composite = 'lighter',
-    max_age = 100,
-    initial_radius = 5,
-    lineWidth = 1.0,
+    max_age = 20,
+    initial_radius = 4,
+    lineWidth = 3.0,
     noiseCanvas = makeOctaveNoise(canvas.width, canvas.height, 8),
     noise = noiseCanvas.getContext('2d').getImageData(0, 0, canvas.width, canvas.height).data;
 
@@ -73,7 +73,21 @@ timer.ontick = function(td){
         }
     }
 
-    ctx.lineWidth = lineWidth;
+    // Automatically add particles if the total count is below a certain number, for example, 100
+    if (particles.length < 1000) {
+        for (var i = 0; i < 1000; i++) {
+            particles.push({
+                vx: fuzzy(10.0),
+                vy: fuzzy(10.0),
+                x: Math.random() * canvas.width, // Random x position within the canvas
+                y: Math.random() * canvas.height, // Random y position within the canvas
+                age: Math.random() * canvas.height 
+            });
+        }
+    }
+
+
+    ctx.lineWidth = 12;
     ctx.strokeStyle = color;
     ctx.fillStyle = color;
     ctx.globalAlpha = 1.0;
@@ -82,14 +96,14 @@ timer.ontick = function(td){
 
     for(var i = 0; i < particles.length; i++){
         var p = particles[i];
-        p.vx = p.vx*0.8 + getNoise(p.x, p.y, 0)*4;//+fuzzy(1.0);
-        p.vy = p.vy*0.8 + getNoise(p.x, p.y, 1)*4;//+fuzzy(1.0);
+        p.vx = p.vx*.1 + getNoise(p.x, p.y, 0)*4 ; //+fuzzy(1.0);
+        p.vy = p.vy*.1+ getNoise(p.x, p.y, 1)*4  ; //+fuzzy(1.0);
         p.x += p.vx;
         p.y += p.vy;
         p.age ++;
 
         ctx.beginPath();
-        ctx.arc(p.x, p.y, 0.5, 0, Math.PI*2, true);
+        ctx.arc(p.x, p.y, 2, 0, Math.PI, true);
         ctx.closePath();
         ctx.fill();
         //ctx.stroke();
