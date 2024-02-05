@@ -74,11 +74,11 @@ timer.ontick = function(td){
     }
 
     // Automatically add particles if the total count is below a certain number, for example, 100
-    if (particles.length < 250) {
-        for (var i = 0; i < 250; i++) {
+    if (particles.length < 100) {
+        for (var i = 0; i < 10; i++) {
             particles.push({
-                vx: fuzzy(10.0),
-                vy: fuzzy(10.0),
+                vx: fuzzy(5.0),
+                vy: fuzzy(5.0),
                 x: Math.random() * canvas.width, // Random x position within the canvas
                 y: Math.random() * canvas.height, // Random y position within the canvas
                 age: Math.random() * canvas.height 
